@@ -1,0 +1,52 @@
+<!-- Chatbot Widget -->
+<div id="chatbot-container" class="fixed bottom-10 right-10 z-[60]">
+    <!-- Chat Button -->
+    <button id="chat-toggle" class="bg-[#22d3ee] text-[#0a0f1d] w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 group ring-4 ring-white/50">
+        <svg id="chat-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+        <svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button>
+
+    <!-- Chat Window -->
+    <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] border border-slate-200 overflow-hidden flex flex-col transition-all duration-300 translate-y-4 opacity-0">
+        <!-- Header -->
+        <div class="bg-[#0f172a] p-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-[#22d3ee] rounded-full flex items-center justify-center">
+                    <svg class="w-4 h-4 text-[#0f172a]" fill="currentColor" viewBox="0 0 20 20"><path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5z"/></svg>
+                </div>
+                <div>
+                    <h3 class="text-white font-black text-xs">Rooter King Assistant</h3>
+                    <p class="text-[#22d3ee] text-[10px] font-bold">Online Now</p>
+                </div>
+            </div>
+            <button id="chat-close" class="text-white/40 hover:text-white">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Messages Area -->
+        <div id="chat-messages" class="flex-1 h-[350px] overflow-y-auto p-4 space-y-3 bg-slate-50">
+            <div class="bg-white border border-slate-100 p-3 rounded-2xl rounded-tl-none shadow-sm max-w-[85%]">
+                <p class="text-xs text-slate-700 font-medium leading-relaxed">👋 Hello! How can I help you with your plumbing today?</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="text-[10px] font-bold bg-slate-200 text-slate-600 px-3 py-1.5 rounded-full cursor-pointer hover:bg-slate-300">Booking service</span>
+                <span class="text-[10px] font-bold bg-slate-200 text-slate-600 px-3 py-1.5 rounded-full cursor-pointer hover:bg-slate-300">Pricing info</span>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <form id="chat-form" class="p-4 bg-white border-t border-slate-100 flex gap-2">
+            <input type="text" id="chat-input" placeholder="Type your message..." class="flex-1 bg-slate-100 rounded-xl px-4 py-2 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-[#22d3ee] outline-none">
+            <button type="submit" class="bg-[#0f172a] text-white p-2 rounded-xl hover:bg-[#22d3ee] hover:text-[#0f172a] transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="/chatbot.js"></script>
