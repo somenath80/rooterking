@@ -1,15 +1,21 @@
+const express = require('express');
+const app = express();
+
+app.set('trust proxy', true);
+
+// Canonical URL
 app.use((req, res, next) => {
-  const host = req.get('host');
+  const host = (req.get('host') || '').toLowerCase();
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
 
-  const canonicalHost = 'www.rooterking.ca';
-
-  if (host !== canonicalHost || protocol !== 'https') {
+  if (host !== 'www.rooterking.ca' || protocol !== 'https') {
     return res.redirect(
       301,
-      `https://${canonicalHost}${req.originalUrl}`
+      `https://www.rooterking.ca${req.originalUrl}`
     );
   }
 
   next();
 });
+
+// Your existing routes below
