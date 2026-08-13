@@ -1,7 +1,3 @@
-const express = require('express');
-const app = express();
-
-app.set('trust proxy', true);
 
 // Canonical URL
 app.use((req, res, next) => {
